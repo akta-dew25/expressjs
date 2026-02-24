@@ -38,9 +38,13 @@ const dummyData = [
 app.use(express.json())
 
 app.get('/',(req,res)=>{
+  console.log("test");
+  
  res.json("welcome to myPractice API")})
 
 app.get('/users',(req,res)=>{
+  console.log("testinghh");
+  
  res.json({
   message:"User list retrieved successfully",
   data:dummyData
@@ -48,6 +52,8 @@ app.get('/users',(req,res)=>{
 })
 
 app.post('/users',(req,res)=>{
+  console.log("yhhhh",req.body);
+  
   const { name } = req.body
 
   const newUser = {
@@ -63,6 +69,7 @@ app.post('/users',(req,res)=>{
   })
 
 })
+console.log("test");
 
 
 
