@@ -1,12 +1,17 @@
 
-// const express = require('express')
-// const authRouter = require('./routes/v1/index.js')
-
+import dotenv from 'dotenv/config'
 import express from 'express'
-import authRouter from './routes/v1/index.js'
+import router from './routes/v1/index.js'
 import users from './data/users.js'
+// import { connectDB } from './mongo/db.js'
+
+// dotenv.config()
+
+// await connectDB()
 
 const app = express()
+console.log("process.env",process.env);
+
 
 const dummyData = [
   { id: 1, name: 'Alice',age:25 },
@@ -16,12 +21,16 @@ const dummyData = [
 
 app.use(express.json())
 
-app.use('/api/v1',authRouter)
+app.use('/api/v1', router)
 
 app.get('/',(req,res)=>{
   console.log(users,"ress");
   
  res.json("welcome to myPractice API")})
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000')
+})
 
 // app.get('/users',(req,res)=>{
   
