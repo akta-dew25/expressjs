@@ -4,8 +4,6 @@ import mongoose from "mongoose";
 const MONGODB_URI = process.env.MONGO_URI;
 const MONGODB_NAME = process.env.MONGO_NAME;
 
-console.log('MONGODB_URI:', MONGODB_URI);
-console.log('MONGODB_NAME:', MONGODB_NAME);
 
 let cachedDb = null;
 

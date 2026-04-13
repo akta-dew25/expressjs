@@ -10,21 +10,14 @@ import users from './data/users.js'
 // await connectDB()
 
 const app = express()
-console.log("process.env",process.env);
 
 
-const dummyData = [
-  { id: 1, name: 'Alice',age:25 },
-  { id: 2, name: 'Bob',age:30 },
-  { id: 3, name: 'Charlie',age:35 }
-]
 
 app.use(express.json())
 
 app.use('/api/v1', router)
 
 app.get('/',(req,res)=>{
-  console.log(users,"ress");
   
  res.json("welcome to myPractice API")})
 
